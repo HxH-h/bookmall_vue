@@ -1,25 +1,51 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { useStore } from "vuex"
+import Login from '../views/login.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/test',
+    name: 'test',
+    meta: { isAuth: true},
+    component: () => import('../views/test.vue')
+  },
+  {
+    path: '/book',
+    name: 'book',
+    meta: { isAuth: true},
+    component: () => import('../views/book.vue')
   }
+  
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  const store = useStore()
+  
+
+  //如果路由需要跳转
+  if (to.meta.isAuth) {
+    if (store.state.token != '') {
+      next()  //放行
+    } else {
+      alert('抱歉，您无权限查看！')
+      next('/login')
+    }
+  } else {
+    // 否则，放行
+    next()
+  }
+})
+
+
 
 export default router
