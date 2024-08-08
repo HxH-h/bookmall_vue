@@ -19,6 +19,18 @@ const routes: Array<RouteRecordRaw> = [
     name: 'book',
     meta: { isAuth: true},
     component: () => import('../views/book.vue')
+  },
+  {
+    path: '/addbook',
+    name: 'addbook',
+    meta: { isAuth: true},
+    component: () => import('../views/addbook.vue')
+  },
+  {
+    path: '/order',
+    name: 'order',
+    meta: { isAuth: true},
+    component: () => import('../views/order.vue')
   }
   
 ]

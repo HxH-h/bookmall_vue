@@ -5,6 +5,9 @@
     :header-cell-style="{ 'text-align': 'center' }"
     :cell-style="{ 'text-align': 'center' }"
   >
+    <el-table-column label="uuid" width="80" v-slot="scope">
+      <img :src="`https://img.the-sky.top/book/${scope.row.uuid}.jpg`"  alt="" width="80" height="100" />
+    </el-table-column>
     <el-table-column prop="title" label="title" width="200" />
     <el-table-column prop="author" label="author" width="120" />
     <el-table-column prop="time" label="time" width="120" />
