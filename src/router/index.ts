@@ -4,8 +4,8 @@ import Login from '../views/login.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/login',
-    name: 'login',
+    path: '/adminlogin',
+    name: 'adminlogin',
     component: Login
   },
   {
@@ -15,32 +15,32 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/test.vue')
   },
   {
-    path: '/book',
-    name: 'book',
+    path: '/adminbook',
+    name: 'adminbook',
     meta: { isAuth: true},
     component: () => import('../views/book.vue')
   },
   {
-    path: '/addbook',
-    name: 'addbook',
+    path: '/adminaddbook',
+    name: 'adminaddbook',
     meta: { isAuth: true},
     component: () => import('../views/addbook.vue')
   },
   {
-    path: '/order',
-    name: 'order',
+    path: '/adminorder',
+    name: 'adminorder',
     meta: { isAuth: true},
     component: () => import('../views/order.vue')
   },
   {
-    path: '/confirmOrder',
-    name: 'confirmOrder',
+    path: '/adminconfirmOrder',
+    name: 'adminconfirmOrder',
     meta: { isAuth: true},
     component: () => import('../views/confirmOrder.vue')
   },
   {
-    path: '/data',
-    name: 'data',
+    path: '/admindata',
+    name: 'admindata',
     meta: { isAuth: true},
     component: () => import('../views/data.vue')
   }

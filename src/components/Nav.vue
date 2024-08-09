@@ -10,22 +10,22 @@
       <el-menu-item index="0" style="margin-left: 10vw;color: black" @click="jumpPage('GameMode')">工作台</el-menu-item>
       <el-sub-menu index="1" style="margin-left: 3svw;color: black">
         <template #title>图书管理</template>
-        <el-menu-item index="1-1" style="color: black" @click="jumpPage('book')">图书详情</el-menu-item>
-        <el-menu-item index="1-2" style="color: black" @click="jumpPage('addbook')">添加图书</el-menu-item>
+        <el-menu-item index="1-1" style="color: black" @click="jumpPage('adminbook')">图书详情</el-menu-item>
+        <el-menu-item index="1-2" style="color: black" @click="jumpPage('adminaddbook')">添加图书</el-menu-item>
       </el-sub-menu>
 
       <el-sub-menu index="2" style="margin-left: 3svw;color: black">
         <template #title>订单管理</template>
-        <el-menu-item index="2-1" style="color: black" @click="jumpPage('order')">确认订单</el-menu-item>
-        <el-menu-item index="2-2" style="color: black" @click="jumpPage('confirmOrder')">更改订单状态</el-menu-item>
+        <el-menu-item index="2-1" style="color: black" @click="jumpPage('adminorder')">确认订单</el-menu-item>
+        <el-menu-item index="2-2" style="color: black" @click="jumpPage('adminconfirmOrder')">更改订单状态</el-menu-item>
       </el-sub-menu>
-      <el-menu-item index="3" style="margin-left: 3svw;color: black" @click="jumpPage('data')">数据统计</el-menu-item>
+      <el-menu-item index="3" style="margin-left: 3svw;color: black" @click="jumpPage('admindata')">数据统计</el-menu-item>
       <div class="flex-grow" />
       <el-sub-menu index="4" v-if="this.store.state.token">
         <template #title>{{ this.store.state.username }}</template>
         <el-menu-item index="4-1" @click="logout">登出</el-menu-item>
       </el-sub-menu>
-      <el-menu-item index="4" @click="jumpPage('login')" v-else>登录</el-menu-item>
+      <el-menu-item index="4" @click="jumpPage('adminlogin')" v-else>登录</el-menu-item>
     </el-menu>
   </div>
 </template>
